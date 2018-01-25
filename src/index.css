@@ -1,0 +1,203 @@
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#header {
+    width: 100%;
+}
+#footer {
+    text-align: center;
+}
+#logo {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    line-height: 64px;
+}
+.headerRight {
+    flex: 1;
+    height: 100%;
+}
+#headerRow {
+    position: relative;
+    height: 100%;
+    border: none;
+    margin-bottom: 0;
+}
+.nav {
+    margin-left: 30px;
+    float: left;
+    line-height: 62px;
+    background: none;
+    border-bottom: none;
+}
+.headerRight .nav a {
+    color: #fff;
+}
+.headerRight .ant-menu-item-selected  a {
+    color: #1890ff;
+}
+.headerDivider {
+    float: left;
+    margin: 10px 0 ;
+    height: 44px;
+}
+.nav_login {
+    float: right;
+}
+.nav_login a {
+    float: left;
+    margin-left: 5px;
+}
+.topMenu {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.dropMenu {
+    width: 120px;
+    text-align: center;
+}
+.main {
+    flex: 1;
+    width: 100%;
+    padding: 0 50px;
+}
+.mainWrap {
+    max-width: 980px;
+    margin:0 auto;
+    margin-bottom: 10px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.subNav {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+.subNav a {
+    display: block;
+    text-align: center;
+    font: 14px/36px "宋体";
+    margin-right: -1px;
+    color: #333;
+    border-right: 3px solid transparent;
+}
+.subNav a:hover,
+.subNav .active {
+    border-right-color: #1890ff;
+    background: #e6f7ff;
+    color: #1890ff;
+}
+.indexList {
+    border-left: 1px solid #CCC;
+    min-height: 216px;
+    padding: 5px 10px;
+}
+#detailsWrap {
+    min-height: 216px;
+}
+.mainWrap img {
+    max-width: 100%;
+}
+.userAvatar {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.userInfo {
+    text-align: center;
+}
+.userInfo a {
+    margin-left: 5px;
+}
+.ant-list-item-meta {
+    align-items: center;
+}
+.ant-list-vertical .ant-list-item-meta-avatar {
+    display: inline-block;
+}
+.userInfoList .ant-list-item-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    line-height: 32px;
+    padding-right: 140px;
+}
+.userInfoList .ant-avatar {
+    vertical-align: middle;
+}
+.userInfoList .user {
+    margin-left: 5px;
+    display: inline-block;
+    width: 80px;
+    vertical-align: middle;
+}
+.userInfoList h4 {
+    flex: 1;
+    margin: 0;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.userInfoList time {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.linkList div {
+    display: flex;
+    flex-wrap: wrap;
+}
+.linkList a {
+    min-width: 160px;
+    max-width: 260px;
+    margin: 5px auto;
+}
+.linkList img {
+    width: 100%;
+}
+@media all and (max-width: 767px) {
+    #header {
+        padding: 0 10px;
+    }
+    #footer {
+        padding: 20px 10px;
+    }
+    .main {
+        padding: 0;
+    }
+    .mainWrap {
+        border: none;
+    }
+    .subNav {
+        padding: 0 30px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+    }
+    .subNav a {
+        flex: 1;
+        border: none;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -1px;
+    }
+    .subNav a:hover,
+    .subNav .active {
+        background: none;
+        border-bottom-color: #1890ff;
+    }
+    .indexList {
+        border-left: none;
+    }
+    .userInfoList .ant-list-item-content {
+        display: block;
+        padding-right: 0;
+    }
+    .userInfoList h4 {
+        margin-left: 0;
+    }
+}
