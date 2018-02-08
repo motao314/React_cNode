@@ -13,7 +13,7 @@
 这里使用的是 cnodejs 官网给出的数据接口，接口文档地址：https://cnodejs.org/api
 
 ## 涉及知识前置说明：
-- react 和 redux 相关的知识，大家可以在妙味官网的视频板块查找相关学习视频
+- react 和 redux 相关的知识，大家可以在查看 https://github.com/motao314/React_note
 - antd 可以参考 design 官网文档，讲解的很详细，但然在后续的视频中也会涉及 antd的使用，官网地址：https://ant.design/index-cn
 
 ## 说明
