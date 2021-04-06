@@ -17,9 +17,8 @@ export default {
       antd: true,
       dva: true,
       dynamicImport: false,
-      title: 'cnode-app',
+      title: 'React_cNode',
       dll: false,
-      
       routes: {
         exclude: [
           /models\//,

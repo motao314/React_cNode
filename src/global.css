@@ -1,7 +1,27 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
 html, body, #root {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   margin: 0;
+  font-family: "宋体",Arial, Helvetica, sans-serif;
+}
+.wrap {
+  margin: 0 auto;
+  width: 1200px;
+}
+.clearFix::after,
+.wrap::after {
+  content: "";
+  display: block;
+  clear: both;
 }
