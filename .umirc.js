@@ -7,7 +7,17 @@ export default {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' }
+        { path: '/', component: '../pages/index' },
+        { path: '/getstart', component: '../pages/getstart' },
+        { path: '/api', component: '../pages/api' },
+        { path: '/about', component: '../pages/about' },
+        { path: '/user/:loginname', component: '../pages/user' },
+        { path: '/topic/create', component: '../pages/createTopic' },
+        { path: '/topic/:id', component: '../pages/topic' },
+        { path: '/setting', component: '../pages/createTopic' },
+        { path: '/login', component: '../pages/login' },
+        { path: '/register', component: '../pages/register' },
+        { path: '', component: '../pages/404' }
       ]
     }
   ],

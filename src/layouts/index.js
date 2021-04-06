@@ -24,7 +24,7 @@ function BasicLayout({location,children}) {
             </div>
           </Layout.Header>
       </Affix>
-      <Layout.Content>
+      <Layout.Content className={style.content+" wrap"}>
            {children}     
       </Layout.Content>
       <Layout.Footer>
