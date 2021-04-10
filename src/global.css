@@ -28,3 +28,7 @@ body {
 .pageMain {
   flex: 1;
 }
+.pageAside {
+  width: 290px;
+  margin-left: 10px;
+}
