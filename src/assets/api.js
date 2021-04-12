@@ -7,10 +7,12 @@ const http = axios.create({
  
 const api = {
     // 获取文章列表
-    getArticles({tab,page,limit=20}){
-        console.log(tab,page);
-        return http.get(`/articles?tab=${tab}$page=${page}$limit=${limit}`); 
-     }
+    getArticles({categoryId,page,limit=20}){
+        return http.get(`/articles?categoryId=${categoryId}&top=0&page=${page}&limit=${limit}`); 
+    },
+    getCategories(){
+        return http.get(`/categories`)
+    }
 }
 
 

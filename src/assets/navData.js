@@ -13,19 +13,4 @@ const navs = [
         title: "关于"
     }
 ];
-const indexNav = [
-    {
-        to:`/?tab=all`,
-        title: "全部"
-    },{
-        to:`/?tab=share`,
-        title: "分享"
-    },{
-        to:`/?tab=ask`,
-        title: "问答"
-    },{
-        to:`/?tab=job`,
-        title: "招聘"
-    }
-];
-export {navs, indexNav};
+export {navs};
