@@ -8,6 +8,7 @@ import IndexNav from './indexCmp/indexNav';
 import {toNow} from "../assets/date";
 import useTag from '../hooks/tag';
 import useAvatar from '../hooks/avatar';
+import Aside from '../components/aside';
 
 
 export default function({location}) {
@@ -48,7 +49,7 @@ export default function({location}) {
                           <Link to={`/user/`} title={item.username}>{setAvatar({src:item.avatar,size:30})}</Link>
                       </Col>
                       <Col span={2} className={styles.listCounts}>{item.replyCount}/{item.viewCount}</Col>
-                      <Col span={16} className={styles.listTitle}>{setTag(item)} <Link to={`/topic/:${item.id}`}>{item.title}</Link></Col>
+                      <Col span={16} className={styles.listTitle}>{setTag(item)} <Link to={`/topic/${item.id}`}>{item.title}</Link></Col>
                       <Col span={4} className={styles.listDate}>{toNow(item.createdAt)}</Col>
                     </Row>
                 </List.Item>
@@ -64,9 +65,7 @@ export default function({location}) {
                 }}  
             />
         </article>
-        <aside className="pageAside">
-
-        </aside>
+        <Aside />
       </>
   );
 }

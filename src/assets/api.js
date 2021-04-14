@@ -7,8 +7,8 @@ const http = axios.create({
  
 const api = {
     // 获取文章列表
-    getArticles({categoryId,page,limit=20}){
-        return http.get(`/articles?categoryId=${categoryId}&top=0&page=${page}&limit=${limit}`); 
+    getArticles({categoryId,page,top=0,limit=20}){
+        return http.get(`/articles?categoryId=${categoryId}&top=${top}&page=${page}&limit=${limit}`); 
     },
     getCategories(){
         return http.get(`/categories`)
