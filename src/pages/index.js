@@ -10,7 +10,6 @@ import useTag from '../hooks/tag';
 import useAvatar from '../hooks/avatar';
 import Aside from '../components/aside';
 
-
 export default function({location}) {
   const {search} = location;
   const {categoryId="0",page="1"} = qs.parse(search.substr(1));

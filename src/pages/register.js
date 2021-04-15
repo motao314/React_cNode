@@ -1,18 +1,50 @@
-import { Button, Card, Form, Input } from "antd";
+import { Button, Card, Form, Input, message } from "antd";
 import Aside from "../components/aside";
 import useBreadcrumb from "../hooks/breadcrumb";
 import { useFormLayout, useFormLayoutBtn } from "../hooks/formLayout";
-import {Link} from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useCallback } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useEffect } from "react";
 export default function () {
   const Breadcrumb = useBreadcrumb("注册");
   const layout = useFormLayout();
   const btnLayout = useFormLayoutBtn();
+  let { loading, register } = useSelector(state => state);
   const dispatch = useDispatch();
-  const onFinish = useCallback((val)=>{
-      console.log(val);
-  },[]);
+  const { replace } = useHistory();
+  const onFinish = useCallback((val) => {
+    if (loading.global || register.status === 1) {
+      return;
+    }
+    dispatch({
+      type: "register/register",
+      ...val
+    })
+  }, [dispatch, loading.global, register.status]);
+
+  useEffect(() => {
+    return () => {
+      if (register.status > 0) {
+        dispatch({
+          type: "register/init"
+        })
+      }
+    }
+  });
+  const msg = () => {
+    if (register.status === 1) {
+      setTimeout(() => {
+        replace("/login");
+      }, 1000);
+      return message.success("注册成功即将跳转");
+
+    }
+    if (register.status === 2) {
+      return message.error(register.error);
+    }
+    return null;
+  }
+  msg();
   return (
     <>
       <article className="pageMain">
@@ -56,6 +88,7 @@ export default function () {
               <Button
                 type="primary"
                 htmlType="submit"
+                loading={loading.global}
               >注册</Button>
               <Button type="link" htmlType="button">
                 <Link to="/login">已有账号！去登陆</Link>
