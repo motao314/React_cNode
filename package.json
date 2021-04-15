@@ -8,13 +8,14 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "antd": "^3.19.5",
+    "@ant-design/icons": "^4.6.2",
+    "antd": "^4.15.1",
     "axios": "^0.21.1",
     "dva": "^2.6.0-beta.6",
     "moment": "^2.29.1",
     "qs": "^6.10.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

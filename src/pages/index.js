@@ -63,6 +63,7 @@ export default function({location}) {
                 onChange={page=>{
                   push(`/?categoryId=${categoryId}&page=${page}`);
                 }}  
+                showSizeChanger={false}
             />
         </article>
         <Aside />

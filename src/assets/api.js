@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import qs from "qs";
 const http = axios.create({
     baseURL: "http://localhost:8888/api",
     timeout: 3000
@@ -12,6 +12,13 @@ const api = {
     },
     getCategories(){
         return http.get(`/categories`)
+    },
+    register({username="",password="",repassword=""}){
+        return http.post("/auth/register",qs.stringify({
+            username,
+            password,
+            repassword
+        }))
     }
 }
 

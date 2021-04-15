@@ -10,7 +10,6 @@ const types = {
 function useTag(){
     const categories = useSelector(state=>state.categories);
     return ({isTop,categoryId})=>{ 
-        console.log(isTop);
         return <Tag color={types[isTop?0:categoryId]}>{isTop?"置顶":categories.filter(item=>item.id===categoryId)[0]["name"]}</Tag>
     }
 }
