@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
 const http = axios.create({
-    baseURL: "http://localhost:8888/api",
+    baseURL: "/api",
     timeout: 3000
 });
  
@@ -19,7 +19,10 @@ const api = {
             password,
             repassword
         }))
-    }
+    },
+    login({username="",password=""}){
+        return http.post('/auth/login',qs.stringify({username,password}))
+    }   
 }
 
 

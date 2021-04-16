@@ -40,4 +40,10 @@ export default {
       },
     }],
   ],
+  proxy:{
+    '/api': {
+      target: 'http://localhost:8888',
+      changeOrigin: true
+    }
+  }
 }
