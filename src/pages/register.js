@@ -21,23 +21,27 @@ export default function () {
       ...val
     })
   }, [dispatch, loading.global, register.status]);
+  useEffect(()=>{
+    return ()=>{
+      dispatch({
+        type: "register/init"
+      })
+    }
+  },[dispatch])
   useEffect(() => {
+    if(loading.global){
+        return;
+    }
     if (register.status === 1) {
       setTimeout(() => {
         replace("/login");
       }, 1000);
       return message.success("注册成功即将跳转");
-
     }
     if (register.status === 2) {
       return message.error(register.error);
     }
-    return () => {
-      dispatch({
-        type: "register/init"
-      })
-    }
-  },[dispatch, loading.global, register.error, register.status, replace]);
+  },[loading.global, register.error, register.status, replace]);
   return (
     <>
       <article className="pageMain">
