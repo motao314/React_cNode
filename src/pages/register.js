@@ -58,7 +58,7 @@ export default function () {
               name="username"
               rules={[{ required: true, message: '请输入用户名' }]}
             >
-              <Input />
+              <Input /> 
             </Form.Item>
             <Form.Item
               label="注册密码"

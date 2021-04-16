@@ -1,4 +1,3 @@
-import { ConsoleSqlOutlined } from "@ant-design/icons";
 import api from "../assets/api";
 export default {
     namespace: "register",
