@@ -21,17 +21,7 @@ export default function () {
       ...val
     })
   }, [dispatch, loading.global, register.status]);
-
   useEffect(() => {
-    return () => {
-      if (register.status > 0) {
-        dispatch({
-          type: "register/init"
-        })
-      }
-    }
-  });
-  const msg = () => {
     if (register.status === 1) {
       setTimeout(() => {
         replace("/login");
@@ -42,9 +32,12 @@ export default function () {
     if (register.status === 2) {
       return message.error(register.error);
     }
-    return null;
-  }
-  msg();
+    return () => {
+      dispatch({
+        type: "register/init"
+      })
+    }
+  },[dispatch, loading.global, register.error, register.status, replace]);
   return (
     <>
       <article className="pageMain">
