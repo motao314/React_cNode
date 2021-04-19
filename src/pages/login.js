@@ -12,6 +12,7 @@ export default function () {
   const btnLayout = useFormLayoutBtn();
   const {loading,user} = useSelector(state=>state);
   const dispatch = useDispatch();
+  const history = useHistory();
   const onFinish = ({username,password})=>{
     if(loading.global&&user.status!==1){
         return ;
@@ -36,9 +37,16 @@ export default function () {
     if(user.status === 2){
       message.error(user.error?user.error:"网络故障，请稍后重试");
     } else if(user.status === 1){
+      setTimeout(() => {
+        if(history.action === "REPLACE"){
+           history.replace(user.prevPath?user.prevPath:"/"); 
+        } else {
+           history.replace("/"); 
+        }  
+      }, 1000);
       message.success("登陆成功，正在跳转");
     }
-  },[loading.global,user]);
+  },[history, loading.global, user]);
   return (
     <>
       <div className="pageMain">

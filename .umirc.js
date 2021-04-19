@@ -1,4 +1,4 @@
-
+import path from "path";
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
@@ -7,16 +7,34 @@ export default {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' },
+        {
+          path: '/',
+          component: '../pages/index'
+        },
         { path: '/getstart', component: '../pages/getstart' },
-        { path: '/api', component: '../pages/api' },
+        {
+          path: '/api',
+          component: '../pages/api'
+        },
         { path: '/about', component: '../pages/about' },
         { path: '/user/:loginname', component: '../pages/user' },
         { path: '/topic/create', component: '../pages/createTopic' },
         { path: '/topic/:id', component: '../pages/topic' },
-        { path: '/setting', component: '../pages/createTopic' },
-        { path: '/login', component: '../pages/login' },
-        { path: '/register', component: '../pages/register' },
+        {
+          path: '/setting',
+          Routes: ["/src/components/auth"], 
+          component: '../pages/setting'
+        },
+        { 
+          path: '/login',
+          Routes: ["/src/components/authLogin"], 
+          component: '../pages/login' 
+        },
+        { 
+          path: '/register',
+          Routes: ["/src/components/authLogin"], 
+          component: '../pages/register' 
+        },
         { path: '', component: '../pages/404' }
       ]
     }
@@ -40,10 +58,13 @@ export default {
       },
     }],
   ],
-  proxy:{
-    '/api': {
+  proxy: {
+    '/dataapi': {
       target: 'http://localhost:8888',
-      changeOrigin: true
+      changeOrigin: true,
+      pathRewrite:{
+        '^/dataapi':"/api"
+      }
     }
   }
 }

@@ -1,15 +1,17 @@
 import api from "../assets/api";
-const user = window.localStorage.getItem("user")
+const user = window.localStorage.getItem("user");
 export default {
     namespace: "user",
     state:{
+        prevPath: "",
         status: 0,
         error: "",
-        user: user?JSON.parse(user):{}
+        user: user?JSON.parse(user).user:{}
     },
     reducers: {
         setUser(state,payload){
             return {
+                prevPath: state.prevPath,
                 status: 1,
                 error: "",
                 user:payload.user
@@ -17,6 +19,7 @@ export default {
         },
         error(state,payload){
             return {
+                prevPath: state.prevPath,
                 status: 2,
                 error: payload.error,
                 user: {}
@@ -24,9 +27,18 @@ export default {
         },
         init(state,payload){
             return {
+                prevPath: "",
                 status:0,
                 error: "",
                 user: payload.user?payload.user:state.user
+            }
+        },
+        setPrevPath(state,payload){
+            return {
+                prevPath: payload.prevPath,
+                status:0,
+                error: "",
+                user: state.user
             }
         }
     },
