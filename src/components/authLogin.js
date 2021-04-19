@@ -11,9 +11,8 @@ export default function (props) {
             return <></>
         }
         return <>{props.children}</>;
-    },[props.children, user])
+    },[])
     useEffect(() => {
-        console.log("111");
         if (user) {
             if (action === "POP") {
                 history.replace("/");
@@ -21,6 +20,6 @@ export default function (props) {
                 history.goBack();
             }
         }
-    }, [action, history, user]);
+    }, []);
     return render();
 }

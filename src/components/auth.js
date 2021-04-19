@@ -14,7 +14,7 @@ export default function (props) {
                 prevPath: pathname
             })
         }
-    }, [dispatch, pathname, user])
+    }, [])
     if (user) {
         return <>{props.children}</>
     }
