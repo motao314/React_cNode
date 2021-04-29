@@ -2,7 +2,7 @@ import { Affix, Layout } from "antd";
 import style from "./index.css";
 import {Link} from "react-router-dom";
 import Nav from "../components/nav";
-import { navs } from "../assets/navData";
+import { navs } from "../assets/js/navData";
 import LoginNav from "../components/loginNav";
 function BasicLayout({location,children}) {
   const {pathname} = location;

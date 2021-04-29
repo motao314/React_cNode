@@ -6,9 +6,6 @@ const navs = [
         to: "/getstart",
         title: "新手入门"
     },{
-        to: "/api",
-        title: "API"
-    },{
         to: "/about",
         title: "关于"
     }

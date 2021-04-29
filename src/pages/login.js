@@ -35,7 +35,7 @@ export default function () {
       return ;
     }
     if(user.status === 2){
-      message.error(user.error?user.error:"网络故障，请稍后重试");
+      message.error(user.error?user.error:"网络故障，请稍后重试",1);
     } else if(user.status === 1){
       setTimeout(() => {
         if(history.action === "REPLACE"){
@@ -43,8 +43,8 @@ export default function () {
         } else {
            history.replace("/"); 
         }  
-      }, 1000);
-      message.success("登陆成功，正在跳转");
+      }, 2000);
+      message.success("登陆成功，正在跳转",2);
     }
   },[history, loading.global, user]);
   return (

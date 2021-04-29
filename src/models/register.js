@@ -1,4 +1,4 @@
-import api from "../assets/api";
+import api from "../assets/js/api";
 export default {
     namespace: "register",
     state:{

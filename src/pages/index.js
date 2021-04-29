@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Link, useHistory} from "react-router-dom"
 import { useEffect } from 'react';
 import IndexNav from './indexCmp/indexNav';
-import {toNow} from "../assets/date";
+import {toNow} from "../assets/js/date";
 import useTag from '../hooks/tag';
 import useAvatar from '../hooks/avatar';
 import Aside from '../components/aside';

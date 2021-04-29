@@ -1,4 +1,4 @@
-import api from "../assets/api";
+import api from "../assets/js/api";
 const user = window.localStorage.getItem("user");
 export default {
     namespace: "user",

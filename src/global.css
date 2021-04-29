@@ -32,3 +32,24 @@ body {
   width: 290px;
   margin-left: 10px;
 }
+.pageAside .asideBox:nth-child(1) {
+  margin-top: 0;
+} 
+.asideBox {
+  margin-top: 10px;
+}
+.asideBox p {
+  padding:.5em 0;
+}
+.asideBox .linksList img {
+  width: 100%;
+  border-radius: 50%;
+}
+.asideBox .username {
+  margin-left: 20px;
+}
+.asideBox .createTopicBtn {
+  display: inline-flex;
+  margin: 20px 0;
+  
+}
