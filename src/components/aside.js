@@ -7,7 +7,6 @@ import useAvatar from "../hooks/avatar";
 function Aside() {
     const user = useUser();
     const avatar = useAvatar();
-    console.log(user);
     return <aside className="pageAside">
         {user ?
             <AsideBox

@@ -40,6 +40,8 @@ export default function () {
       setTimeout(() => {
         if(history.action === "REPLACE"){
            history.replace(user.prevPath?user.prevPath:"/"); 
+        } else if(history.action === "PUSH"){
+           history.goBack();
         } else {
            history.replace("/"); 
         }  

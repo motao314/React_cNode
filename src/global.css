@@ -32,10 +32,10 @@ body {
   width: 290px;
   margin-left: 10px;
 }
-.pageAside .asideBox:nth-child(1) {
+.pageAside .contentBox:nth-child(1) {
   margin-top: 0;
 } 
-.asideBox {
+.contentBox {
   margin-top: 10px;
 }
 .asideBox p {
@@ -50,6 +50,13 @@ body {
 }
 .asideBox .createTopicBtn {
   display: inline-flex;
-  margin: 20px 0;
-  
+  margin: 20px 0; 
 }
+.editorBtn {
+  margin: 10px 0;
+  float: right;
+}
+.editBox {
+  position: relative;
+}
+

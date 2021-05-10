@@ -7,7 +7,7 @@ const http = axios.create({
  
 const api = {
     // 获取文章列表
-    getArticles({categoryId,page,top=0,limit=20}){
+    getArticles({categoryId=0,page=1,top=0,limit=20}){
         return http.get(`/articles?categoryId=${categoryId}&top=${top}&page=${page}&limit=${limit}`); 
     },
     getCategories(){
@@ -22,6 +22,12 @@ const api = {
     },
     login({username="",password=""}){
         return http.post('/auth/login',qs.stringify({username,password}))
+    },
+    article(id){
+        return http.get(`/article/${id}`);
+    },
+    replyList({articleId,page,limit}){
+        return http.get(`/replies?`+qs.stringify({articleId,page,limit}))
     }   
 }
 

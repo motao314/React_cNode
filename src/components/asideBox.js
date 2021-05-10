@@ -5,7 +5,7 @@ export default function ({title,children}) {
     <Card
       bordered
       title={title}
-      className="asideBox"
+      className="contentBox asideBox"
       type="inner"
     >
       {children}

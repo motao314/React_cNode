@@ -56,7 +56,7 @@ export default function({location}) {
             />
             <Pagination 
                 current={Number(page)}
-                pageSize={articles.limit}
+                pageSize={20}
                 total={articles.count}
                 className={styles.pagination}
                 onChange={page=>{
