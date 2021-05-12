@@ -17,7 +17,7 @@ function ReplyList({loading,articleId,data}) {
             articleId,
             page:data.page + 1
         });
-    },[]);
+    },[data,loading]);
     const loadMore = useMemo(()=>{
         if(data.page>=data.pages){
             return null;
@@ -28,7 +28,7 @@ function ReplyList({loading,articleId,data}) {
         }}>
             <Button onClick={loadMoreFn}>加载更多</Button>
         </div>
-    },[data.page,data.pages]);
+    },[data.page,data.pages,loadMoreFn]);
     return <Card
         title={"回复列表"}
         className="contentBox"

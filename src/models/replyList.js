@@ -24,6 +24,15 @@ export default {
                 replyList
             }
 
+        },
+        add(state,{id,articleId,userId,content,createdAt,username,avatar}){
+            return {
+                ...state,
+                replyList:[
+                    {id,articleId,userId,content,createdAt,username,avatar},
+                    ...state.replyList
+                ]
+            }
         }
     },
     effects: {

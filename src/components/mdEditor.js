@@ -58,16 +58,30 @@ const modules = {
   }  
 function MdEditor({className="",fnSubmit=()=>{},children,user}){
     const [value, setValue] = useState('');
+    const [submiting,setSubmiting] = useState(false);
+    const [disabled,setDisabled] = useState(true);
     return <div className="editBox">
-        <ReactQuill theme="snow" value={value} modules={modules} onChange={setValue} className={className}/>
+        <ReactQuill theme="snow" value={value} modules={modules} 
+          onChange={val=>{
+            setValue(val);
+            setDisabled(!val.length);
+          }} 
+          className={className}
+          readOnly={submiting}
+        />
         {children}
         <div className="clearFix">
             <Button 
                 type={"primary"} 
                 className="editorBtn"
-                disabled={!user}
-                onClick={()=>{
-                    fnSubmit(value,setValue);
+                disabled={disabled}
+                loading={submiting}
+                onClick={async()=>{
+                    setSubmiting(true);
+                    await fnSubmit(value,setValue);
+                    setValue("");
+                    setDisabled(true);
+                    setSubmiting(false);
                 }}
             >提交</Button>
         </div>

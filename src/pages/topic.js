@@ -2,6 +2,7 @@ import { Button, Card } from "antd";
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams,Link } from "react-router-dom";
+import api from "../assets/js/api";
 import { toNow } from "../assets/js/date";
 import Aside from "../components/aside";
 import MarkdownText from "../components/markdownText";
@@ -11,11 +12,13 @@ import useTag from "../hooks/tag";
 import useUser from "../hooks/useUser";
 import style from "./topic.css";
 import ReplyList from "./topicCmp/replyList";
+import htmlToMd from "../assets/js/htmlToMd";
+import data from "../assets/js/linksData";
 export default function() {
     const {id} = useParams();
     const dispatch = useDispatch();
     const {article,loading,replyList} = useSelector(state=>state);
-    const {avatar,category_id,createdAt,isTop,title,userId,username,content} = article;
+    const {avatar,categoryId,createdAt,isTop,title,userId,username,content} = article;
     const tag = useTag();
     const setAvatar = useAvatar();
     const user = useUser();
@@ -23,7 +26,7 @@ export default function() {
       return article.title?(<div>
             <h2>{title}</h2>
             <div style={{display:"flex",alignItems:"center"}}>
-                {tag({isTop,categoryId:category_id})}
+                {tag({isTop,categoryId})}
                 <Link to={"/user/"+userId} style={{
                     marginLeft: 10
                   }}>
@@ -61,7 +64,24 @@ export default function() {
               type="inner"
               className="contentBox"
             >
-              <MdEditor className={style.replyEdtor} user={user} >
+              <MdEditor 
+                className={style.replyEdtor} 
+                user={user}
+                fnSubmit={async (val,setValue)=>{
+                  val = htmlToMd(val);
+                  const res =  await api.reply({articleId:id,content:val,authorization:user.authorization});
+                  dispatch({
+                    type: "replyList/add",
+                    id: res.data.results.id,
+                    articleId: id,
+                    userId: user.id,
+                    content: val,
+                    createdAt: Date.now(),
+                    username: user.username,
+                    avatar: user.avatar
+                  })
+                }} 
+              >
                 {user?<></>:<div className={style.mask}>
                     <Link to="/register" className={style.replyBtn}>
                       <Button

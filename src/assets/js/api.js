@@ -28,6 +28,13 @@ const api = {
     },
     replyList({articleId,page,limit}){
         return http.get(`/replies?`+qs.stringify({articleId,page,limit}))
+    },
+    reply({articleId,content,authorization}){
+        return http.post('/reply',qs.stringify({articleId,content}),{
+            headers:{
+                authorization
+            }
+        })
     }   
 }
 
