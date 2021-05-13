@@ -45,7 +45,7 @@ export default function({location}) {
                 return <List.Item>
                     <Row className={styles.listItem}>
                       <Col span={2} className={styles.listAvatar}>
-                          <Link to={`/user/`} title={item.username}>{setAvatar({src:item.avatar,size:30})}</Link>
+                          <Link to={`/user/${item.userId}`} title={item.username}>{setAvatar({src:item.avatar,size:30})}</Link>
                       </Col>
                       <Col span={2} className={styles.listCounts}>{item.replyCount}/{item.viewCount}</Col>
                       <Col span={16} className={styles.listTitle}>{setTag(item)} <Link to={`/topic/${item.id}`}>{item.title}</Link></Col>

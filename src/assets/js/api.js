@@ -34,6 +34,15 @@ const api = {
                 authorization
             }
         })
+    },
+    user({value}){
+        return http.get('/user/profile?'+qs.stringify({value}));
+    },
+    userArticles({userId,page,limit=5}){
+        return http.get('/user/articles?'+qs.stringify({userId,page,limit}));
+    },
+    userReplies({userId,page,limit=5}){
+        return http.get('/user/replies?'+qs.stringify({userId,page,limit}));
     }   
 }
 

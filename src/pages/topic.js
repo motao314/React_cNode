@@ -13,7 +13,6 @@ import useUser from "../hooks/useUser";
 import style from "./topic.css";
 import ReplyList from "./topicCmp/replyList";
 import htmlToMd from "../assets/js/htmlToMd";
-import data from "../assets/js/linksData";
 export default function() {
     const {id} = useParams();
     const dispatch = useDispatch();
