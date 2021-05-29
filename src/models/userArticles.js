@@ -1,6 +1,6 @@
 import api from "../assets/js/api";
 export default {
-    namespace: "userInfo",
+    namespace: "userArcticles",
     state:{
         
     },
@@ -8,6 +8,9 @@ export default {
         
     },
     effects: {
-        
+        *getData({id,page},{put,call}){
+            const res = yield call(api.userArticles,{userId:id,page});
+            console.log(res);
+        }
     }
 }

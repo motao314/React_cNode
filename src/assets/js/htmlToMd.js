@@ -8,7 +8,6 @@ TurndownService.addRule('code', {
       return '```\n' + content + '```\n'
     }
   })
-console.log(TurndownService.turndown(`<code>123</code>`));
 export default (input)=>{
     return TurndownService.turndown(input);
 }

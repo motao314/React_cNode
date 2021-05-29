@@ -13,7 +13,7 @@ export default {
         },
         { path: '/getstart', component: '../pages/getstart' },
         { path: '/about', component: '../pages/about' },
-        { path: '/user/:loginname', component: '../pages/user' },
+        { path: '/user/:id', component: '../pages/user' },
         { 
           path: '/topic/create', 
           Routes: ["/src/components/auth"],
