@@ -9,20 +9,17 @@ import {toNow} from "../assets/js/date";
 import useTag from '../hooks/tag';
 import useAvatar from '../hooks/avatar';
 import Aside from '../components/aside';
+import useTabs from '../hooks/useTabs';
 
 export default function({location}) {
   const {search} = location;
   const {categoryId="0",page="1"} = qs.parse(search.substr(1));
-  const {articles,loading,categories} = useSelector(state=>state);
+  const {articles,loading} = useSelector(state=>state);
   const dispatch = useDispatch();
   const setTag = useTag();
   const setAvatar = useAvatar();
   const {push} = useHistory();
-  useEffect(()=>{
-    dispatch({
-      type:"categories/getData"
-    });
-  },[dispatch])
+  const categories = useTabs();
   useEffect(()=>{
       dispatch({
         type:"articles/getData",
