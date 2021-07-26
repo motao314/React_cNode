@@ -4,17 +4,17 @@ import useUser from "../hooks/useUser";
 import { Button, List } from "antd";
 import linksData from "../assets/js/linksData";
 import useAvatar from "../hooks/avatar";
-function Aside() {
+function Aside({ showUserInfo = true }) {
     const user = useUser();
     const avatar = useAvatar();
     return <aside className="pageAside">
-        {user ?
+        {showUserInfo ? (user ?
             <AsideBox
                 title={"个人信息"}
             >
                 <div>
-                    <Link to={"/user/"+user.id}>{avatar({src:user.avatar,size:60,shape:"square"})}</Link>
-                    <Link to={"/user/"+user.id} className="username">{user.username}</Link>
+                    <Link to={"/user/" + user.id}>{avatar({ src: user.avatar, size: 60, shape: "square" })}</Link>
+                    <Link to={"/user/" + user.id} className="username">{user.username}</Link>
                 </div>
                 <Link className="createTopicBtn" to="/topic/create"><Button type="primary">发布新话题</Button></Link>
             </AsideBox>
@@ -24,6 +24,7 @@ function Aside() {
             >
                 <p>您可以 <Link to="/login">登录</Link> 或 <Link to="/register">注册</Link></p>
             </AsideBox>
+        ) : ""
         }
         <AsideBox
             title={"关于"}

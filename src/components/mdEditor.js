@@ -61,7 +61,10 @@ function MdEditor({className="",fnSubmit=()=>{},children,user}){
     const [submiting,setSubmiting] = useState(false);
     const [disabled,setDisabled] = useState(false);
     return <div className="editBox">
-        <ReactQuill theme="snow" value={value} modules={modules} 
+        <ReactQuill 
+          theme="snow" 
+          value={value} 
+          modules={modules} 
           onChange={val=>{
             setValue(val);
             setDisabled(!val.length);
@@ -77,13 +80,12 @@ function MdEditor({className="",fnSubmit=()=>{},children,user}){
                 disabled={disabled}
                 loading={submiting}
                 onClick={async()=>{
-                    if(submiting||(!value.trim())){
+                    if(submiting){
                       return;
                     }
                     setSubmiting(true);
                     setDisabled(true);
                     await fnSubmit(value,setValue);
-                    setValue("");
                     setDisabled(false);
                     setSubmiting(false);
                 }}

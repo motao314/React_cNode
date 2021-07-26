@@ -43,6 +43,13 @@ const api = {
     },
     userReplies({userId,page,limit=5}){
         return http.get('/user/replies?'+qs.stringify({userId,page,limit}));
+    },
+    createTopic({categoryId,title,content,authorization}){
+        return http.post('/article',qs.stringify({categoryId,title,content}),{
+            headers:{
+                authorization
+            }
+        })
     }   
 }
 

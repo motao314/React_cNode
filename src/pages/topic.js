@@ -1,4 +1,4 @@
-import { Button, Card } from "antd";
+import { Button, Card, message } from "antd";
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams,Link } from "react-router-dom";
@@ -67,6 +67,10 @@ export default function() {
                 className={style.replyEdtor} 
                 user={user}
                 fnSubmit={async (val,setValue)=>{
+                  if(!val.trim()){
+                    message.error("请输入评论内容");
+                    return ;
+                  }
                   val = htmlToMd(val);
                   const res =  await api.reply({articleId:id,content:val,authorization:user.authorization});
                   dispatch({
@@ -79,6 +83,7 @@ export default function() {
                     username: user.username,
                     avatar: user.avatar
                   })
+                  setValue("");
                 }} 
               >
                 {user?<></>:<div className={style.mask}>

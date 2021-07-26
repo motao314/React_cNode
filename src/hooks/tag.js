@@ -1,5 +1,5 @@
 import { Tag } from "antd";
-import { useSelector } from "react-redux";
+import useTabs from "./useTabs";
 
 const types = {
     0: "#87d068",
@@ -8,7 +8,7 @@ const types = {
     3: "purple"
 };
 function useTag(){
-    const categories = useSelector(state=>state.categories);
+    const categories = useTabs();
     return ({isTop,categoryId})=>{ 
         return <Tag color={types[isTop?0:categoryId]}>{isTop?"置顶":categories.filter(item=>item.id===categoryId)[0]["name"]}</Tag>
     }
