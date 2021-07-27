@@ -1,0 +1,12 @@
+.avatar{
+  padding: 10px 0 20px;
+  text-align: center;
+}
+.userInfo1 {
+  text-align: right;
+  padding-right: 20px;
+}
+.userInfo2 {
+  text-align: left;
+  padding-left: 20px;
+}

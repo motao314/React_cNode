@@ -1,6 +1,6 @@
 import api from "../assets/js/api";
 export default {
-    namespace: "userArticles",
+    namespace: "userReplys",
     state: {
         articles: [],
         count: 0,
@@ -31,7 +31,7 @@ export default {
     effects: {
         *getData({ userId, page, limit }, { call, put }) {
             let data;
-            const res = yield call(api.userArticles, { userId, page, limit });
+            const res = yield call(api.userReplies, { userId, page, limit });
             data = res.data.results;
             yield put({
                 type: "upload",
