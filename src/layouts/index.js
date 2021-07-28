@@ -11,7 +11,7 @@ function BasicLayout({location,children}) {
       <Affix offsetTop={0}>
           <Layout.Header>
             <div className="wrap">
-              <h1 id={style.logo}><Link to="/">CNode</Link></h1>
+              <h1 id={style.logo}><Link to="/">花果山</Link></h1>
               <Nav 
                 data={navs}
                 theme="dark"

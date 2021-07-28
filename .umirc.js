@@ -11,7 +11,7 @@ export default {
           path: '/',
           component: '../pages/index'
         },
-        { path: '/getstart', component: '../pages/getstart' },
+        { path: '/study', component: '../pages/study' },
         { path: '/about', component: '../pages/about' },
         { path: '/user/:id', component: '../pages/user' },
         { 
@@ -45,7 +45,7 @@ export default {
       antd: true,
       dva: true,
       dynamicImport: false,
-      title: 'React_cNode',
+      title: '花果山前端团队',
       dll: false,
       routes: {
         exclude: [

@@ -51,11 +51,11 @@ export default function () {
         type: "userReplys/reset"
       })
     }
-  }, []);
+  }, [id]);
   return (
     <>
       <div className="pageMain">
-        <Card className="contentBox">
+        <Card>
           <div className={style.avatar}>
             {avatar({ src: userInfo.avatar, size: 80 })}
           </div>
@@ -69,6 +69,7 @@ export default function () {
           title={"发表的话题"}
         >
           <LoadMoreList
+            id={id}
             data={userArticles}
             loading={userArticlesLoading}
             loadMoreFn={ userArticlesLoadMore}
@@ -79,6 +80,7 @@ export default function () {
           title={"参与的话题"}
         >
           <LoadMoreList
+            id={id}
             data={userReplys}
             loading={userReplysLoading}
             loadMoreFn={ userReplysLoadMore}
