@@ -1,12 +1,11 @@
 import {useEffect, useMemo} from "react";
 import {Button,List,Row,Col} from "antd";
-import useAvatar from "../hooks/avatar";
+import setAvatar from "../assets/js/avatar";
 import { toNow } from "../assets/js/date";
 import { Link } from "react-router-dom";
 import useTag from "../hooks/tag";
 import styles from "../pages/index.css";
 export default ({id,loading, data, loadMoreFn}) => {
-    const setAvatar = useAvatar();
     const setTag = useTag();
     const loadMore = useMemo(() => {
         if (data.page >= data.pages) {

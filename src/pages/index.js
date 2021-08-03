@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import IndexNav from './indexCmp/indexNav';
 import {toNow} from "../assets/js/date";
 import useTag from '../hooks/tag';
-import useAvatar from '../hooks/avatar';
+import setAvatar from '../assets/js/avatar';
 import Aside from '../components/aside';
 import useTabs from '../hooks/useTabs';
 
@@ -17,7 +17,6 @@ export default function({location}) {
   const {articles,loading} = useSelector(state=>state);
   const dispatch = useDispatch();
   const setTag = useTag();
-  const setAvatar = useAvatar();
   const {push} = useHistory();
   const categories = useTabs();
   useEffect(()=>{

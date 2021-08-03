@@ -50,6 +50,15 @@ const api = {
                 authorization
             }
         })
+    },
+    updateAvatar({authorization,avatar}){
+        let file = new FormData();
+        file.append("avatar",avatar);
+        return http.patch("/user/avatar",file,{
+            headers:{
+                authorization
+            }
+        })
     }   
 }
 

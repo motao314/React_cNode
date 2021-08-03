@@ -11,7 +11,7 @@ export default function (props) {
             return <></>
         }
         return <>{props.children}</>;
-    },[])
+    },[]);
     useEffect(() => {
         if (user) {
             if (action === "POP") {

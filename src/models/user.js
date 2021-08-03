@@ -40,6 +40,14 @@ export default {
                 error: "",
                 user: state.user
             }
+        },
+        setAvatar(state,{avatar}){
+            const newUser = {...state.user,avatar};
+            window.localStorage.setItem("user",JSON.stringify({user:newUser}));
+            return {
+                ...state,
+                user: newUser
+            }
         }
     },
     effects: {

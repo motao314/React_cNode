@@ -5,11 +5,9 @@ import { useParams } from "react-router";
 import { toNow } from "../assets/js/date";
 import style from "./user.css";
 import Aside from "../components/aside";
-import useAvatar from "../hooks/avatar";
 import LoadMoreList from "../components/LoadMoreList";
-
+import setAvatar from "../assets/js/avatar";
 export default function () {
-  const avatar = useAvatar();
   const dispatch = useDispatch();
   const { id } = useParams();
   const userInfo = useSelector(state => state.userInfo);
@@ -57,7 +55,7 @@ export default function () {
       <div className="pageMain">
         <Card>
           <div className={style.avatar}>
-            {avatar({ src: userInfo.avatar, size: 80 })}
+            {setAvatar({ src: userInfo.avatar, size: 80 })}
           </div>
           <Row className={style.userInfo}>
             <Col offset={4} span={8} className={style.userInfo1}>用户名：{userInfo.username}</Col>

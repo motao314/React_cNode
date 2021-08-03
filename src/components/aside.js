@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 import useUser from "../hooks/useUser";
 import { Button, List } from "antd";
 import linksData from "../assets/js/linksData";
-import useAvatar from "../hooks/avatar";
+import setAvatar from "../assets/js/avatar";
 function Aside({ showUserInfo = true }) {
     const user = useUser();
-    const avatar = useAvatar();
     return <aside className="pageAside">
         {showUserInfo ? (user ?
             <AsideBox
                 title={"个人信息"}
             >
                 <div>
-                    <Link to={"/user/" + user.id}>{avatar({ src: user.avatar, size: 60, shape: "square" })}</Link>
+                    <Link to={"/user/" + user.id}>{setAvatar({ src: user.avatar, size: 60, shape: "square" })}</Link>
                     <Link to={"/user/" + user.id} className="username">{user.username}</Link>
                 </div>
                 <Link className="createTopicBtn" to="/topic/create"><Button type="primary">发布新话题</Button></Link>

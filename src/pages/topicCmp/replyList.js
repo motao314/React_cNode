@@ -1,12 +1,11 @@
 import { useCallback, useMemo } from "react";
 import { Button, Card, List } from "antd";
-import useAvatar from "../../hooks/avatar";
+import setAvatar from "../../assets/js/avatar";
 import { toNow } from "../../assets/js/date";
 import { Link } from "react-router-dom";
 import MarkdownText from "../../components/markdownText";
 import { useDispatch } from "react-redux";
 function ReplyList({loading,articleId,data}) {
-    const setAvatar = useAvatar();
     const dispatch = useDispatch();
     const loadMoreFn = useCallback(()=>{
         if(loading.models.replyList){

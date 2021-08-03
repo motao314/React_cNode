@@ -7,7 +7,7 @@ import { toNow } from "../assets/js/date";
 import Aside from "../components/aside";
 import MarkdownText from "../components/markdownText";
 import MdEditor from "../components/mdEditor";
-import useAvatar from "../hooks/avatar";
+import setAvatar from "../assets/js/avatar";
 import useTag from "../hooks/tag";
 import useUser from "../hooks/useUser";
 import style from "./topic.css";
@@ -19,7 +19,6 @@ export default function() {
     const {article,loading,replyList} = useSelector(state=>state);
     const {avatar,categoryId,createdAt,isTop,title,userId,username,content} = article;
     const tag = useTag();
-    const setAvatar = useAvatar();
     const user = useUser();
     const articleTitle = useMemo(()=>{
       return article.title?(<div>

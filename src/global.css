@@ -59,4 +59,38 @@ body {
 .editBox {
   position: relative;
 }
+.footer {
+  padding: 20px 0;
+}
 
+.setting-avatar {
+  position: relative;
+  margin: 10px auto 0;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+.setting-avatar-mask {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font: 12px/30px "宋体";
+  color: #000;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+.setting-user-info {
+  font-size: 12px;
+  text-align: center;
+  line-height: 40px;
+  color: #000;
+}
+.setting-user-info span {
+  padding: 0 5px;
+}
+.avatar-update {
+  display: block;
+  margin: 10px auto;
+  width: 104px;
+}

@@ -20,11 +20,6 @@ export default {
           component: '../pages/createTopic' 
         },
         { path: '/topic/:id', component: '../pages/topic' },
-        {
-          path: '/setting',
-          Routes: ["/src/components/auth"], 
-          component: '../pages/setting'
-        },
         { 
           path: '/login',
           Routes: ["/src/components/authLogin"], 
@@ -64,6 +59,13 @@ export default {
       changeOrigin: true,
       pathRewrite:{
         '^/dataapi':"/api"
+      }
+    },
+    '/public': {
+      target: 'http://localhost:8888',
+      changeOrigin: true,
+      pathRewrite:{
+        '^/public':"/public"
       }
     }
   }

@@ -27,8 +27,8 @@ function BasicLayout({location,children}) {
       <Layout.Content className={style.content+" wrap"}>
            {children}     
       </Layout.Content>
-      <Layout.Footer>
-          <p>CNode社区by <a href="https://github.com/motao314/React_cNode" target="https://github.com/motao314/React_cNode">https://github.com/motao314/React_cNode</a></p>
+      <Layout.Footer className="wrap footer">
+          <p>源码下载地址by <a href="https://github.com/motao314/React_cNode" target="https://github.com/motao314/React_cNode">https://github.com/motao314/React_cNode</a></p>
       </Layout.Footer>
     </Layout>
   );
