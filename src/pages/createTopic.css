@@ -1,6 +1,0 @@
-.rows {
-  padding: 5px 0;
-}
-.editor :global(.ql-editor){
-  min-height: 170px;
-}

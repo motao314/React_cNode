@@ -1,2 +1,15 @@
-# React_cNode
-基于 umi + dva 的 React 社群项目
+# umi project
+
+## Getting Started
+
+Install dependencies,
+
+```bash
+$ yarn
+```
+
+Start the dev server,
+
+```bash
+$ yarn start
+```
